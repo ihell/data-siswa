@@ -36,3 +36,14 @@ export async function ambilDataSiswa() {
 
   return retval;
 }
+
+export async function tambahSiswa(val) {
+   try {
+     const docRef = await addDoc(collection(db, "siswa"), {
+       nama: val
+     });
+     console.log('Berhasil: ' + docRef.id);
+   } catch (e) {
+     console.log('Error: ' + e);
+   }
+}
