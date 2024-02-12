@@ -47,3 +47,7 @@ export async function tambahSiswa(val) {
      console.log('Error: ' + e);
    }
 }
+
+ export async hapusSiswa(docId) {
+  await deletDoc(doc(db, "siswa", docId));
+}

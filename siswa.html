@@ -17,11 +17,13 @@
   <h1>Daftar Siswa</h1>
 
   <ul id="daftar-siswa"></ul>
+  <ul id="daftar-siswa" class="list-group"></ul>
 
   <a class="mt-1" href="index.html">Form Tambah Siswa</a>
 
   <script type="module">
     import { ambilDataSiswa } from "./main.js";
+    import { ambilDataSiswa, hapusSiswa } from "./main.js"
 
     $(document).ready(async function() {
       let elemenNamaSiswa = $('#daftar-siswa');
@@ -29,13 +31,14 @@
 
       daftarSiswa.forEach((data) => {
         elemenNamaSiswa.append(
-          '<li>' +
+          '<li class="list-group-item">' +
           data.nama +
+          '<button class="btn btn-danger tombol-hapus">Hapus</button>'
           '</li>'
         );
       });
     });
-  </script>
+</script>
 </body>
 
 </html>
